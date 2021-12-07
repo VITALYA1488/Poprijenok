@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{169D4AF2-C42B-43FD-B88D-212DD01CA020}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Poprijenok</RootNamespace>
+    <AssemblyName>Poprijenok</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agent.cs" />
+    <Compile Include="AgentPriorityHistory.cs" />
+    <Compile Include="Agents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agents.Designer.cs">
+      <DependentUpon>Agents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentType.cs" />
+    <Compile Include="DobAgents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DobAgents.Designer.cs">
+      <DependentUpon>DobAgents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material.cs" />
+    <Compile Include="MaterialCountHistory.cs" />
+    <Compile Include="MaterialType.cs" />
+    <Compile Include="Model1.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductCostHistory.cs" />
+    <Compile Include="ProductMaterial.cs" />
+    <Compile Include="ProductSale.cs" />
+    <Compile Include="ProductType.cs" />
+    <Compile Include="Shop.cs" />
+    <Compile Include="Supplier.cs" />
+    <Compile Include="VhodForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VhodForma.Designer.cs">
+      <DependentUpon>VhodForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Agents.resx">
+      <DependentUpon>Agents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DobAgents.resx">
+      <DependentUpon>DobAgents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VhodForma.resx">
+      <DependentUpon>VhodForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Agent.datasource" />
+    <None Include="Properties\DataSources\AgentType.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Попрыженок.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="photo\agent_1.png" />
+    <Content Include="photo\agent_10.png" />
+    <Content Include="photo\agent_100.png" />
+    <Content Include="photo\agent_101.png" />
+    <Content Include="photo\agent_102.png" />
+    <Content Include="photo\agent_103.png" />
+    <Content Include="photo\agent_104.png" />
+    <Content Include="photo\agent_105.png" />
+    <Content Include="photo\agent_106.png" />
+    <Content Include="photo\agent_107.png" />
+    <Content Include="photo\agent_108.png" />
+    <Content Include="photo\agent_109.png" />
+    <Content Include="photo\agent_11.png" />
+    <Content Include="photo\agent_110.png" />
+    <Content Include="photo\agent_111.png" />
+    <Content Include="photo\agent_112.png" />
+    <Content Include="photo\agent_113.png" />
+    <Content Include="photo\agent_114.png" />
+    <Content Include="photo\agent_115.png" />
+    <Content Include="photo\agent_116.png" />
+    <Content Include="photo\agent_117.png" />
+    <Content Include="photo\agent_118.png" />
+    <Content Include="photo\agent_119.png" />
+    <Content Include="photo\agent_12.png" />
+    <Content Include="photo\agent_120.png" />
+    <Content Include="photo\agent_121.png" />
+    <Content Include="photo\agent_122.png" />
+    <Content Include="photo\agent_123.png" />
+    <Content Include="photo\agent_124.png" />
+    <Content Include="photo\agent_125.png" />
+    <Content Include="photo\agent_126.png" />
+    <Content Include="photo\agent_127.png" />
+    <Content Include="photo\agent_128.png" />
+    <Content Include="photo\agent_129.png" />
+    <Content Include="photo\agent_13.png" />
+    <Content Include="photo\agent_130.png" />
+    <Content Include="photo\agent_14.png" />
+    <Content Include="photo\agent_15.png" />
+    <Content Include="photo\agent_16.png" />
+    <Content Include="photo\agent_17.png" />
+    <Content Include="photo\agent_18.png" />
+    <Content Include="photo\agent_19.png" />
+    <Content Include="photo\agent_2.png" />
+    <Content Include="photo\agent_20.png" />
+    <Content Include="photo\agent_21.png" />
+    <Content Include="photo\agent_22.png" />
+    <Content Include="photo\agent_23.png" />
+    <Content Include="photo\agent_24.png" />
+    <Content Include="photo\agent_25.png" />
+    <Content Include="photo\agent_26.png" />
+    <Content Include="photo\agent_27.png" />
+    <Content Include="photo\agent_28.png" />
+    <Content Include="photo\agent_29.png" />
+    <Content Include="photo\agent_3.png" />
+    <Content Include="photo\agent_30.png" />
+    <Content Include="photo\agent_31.png" />
+    <Content Include="photo\agent_32.png" />
+    <Content Include="photo\agent_33.png" />
+    <Content Include="photo\agent_34.png" />
+    <Content Include="photo\agent_35.png" />
+    <Content Include="photo\agent_36.png" />
+    <Content Include="photo\agent_37.png" />
+    <Content Include="photo\agent_38.png" />
+    <Content Include="photo\agent_39.png" />
+    <Content Include="photo\agent_4.png" />
+    <Content Include="photo\agent_40.png" />
+    <Content Include="photo\agent_41.png" />
+    <Content Include="photo\agent_42.png" />
+    <Content Include="photo\agent_43.png" />
+    <Content Include="photo\agent_44.png" />
+    <Content Include="photo\agent_45.png" />
+    <Content Include="photo\agent_46.png" />
+    <Content Include="photo\agent_47.png" />
+    <Content Include="photo\agent_48.png" />
+    <Content Include="photo\agent_49.png" />
+    <Content Include="photo\agent_5.png" />
+    <Content Include="photo\agent_50.png" />
+    <Content Include="photo\agent_51.png" />
+    <Content Include="photo\agent_52.png" />
+    <Content Include="photo\agent_53.png" />
+    <Content Include="photo\agent_54.png" />
+    <Content Include="photo\agent_55.png" />
+    <Content Include="photo\agent_56.png" />
+    <Content Include="photo\agent_57.png" />
+    <Content Include="photo\agent_58.png" />
+    <Content Include="photo\agent_59.png" />
+    <Content Include="photo\agent_6.png" />
+    <Content Include="photo\agent_60.png" />
+    <Content Include="photo\agent_61.png" />
+    <Content Include="photo\agent_62.png" />
+    <Content Include="photo\agent_63.png" />
+    <Content Include="photo\agent_64.png" />
+    <Content Include="photo\agent_65.png" />
+    <Content Include="photo\agent_66.png" />
+    <Content Include="photo\agent_67.png" />
+    <Content Include="photo\agent_68.png" />
+    <Content Include="photo\agent_69.png" />
+    <Content Include="photo\agent_7.png" />
+    <Content Include="photo\agent_70.png" />
+    <Content Include="photo\agent_71.png" />
+    <Content Include="photo\agent_72.png" />
+    <Content Include="photo\agent_73.png" />
+    <Content Include="photo\agent_74.png" />
+    <Content Include="photo\agent_75.png" />
+    <Content Include="photo\agent_76.png" />
+    <Content Include="photo\agent_77.png" />
+    <Content Include="photo\agent_78.png" />
+    <Content Include="photo\agent_79.png" />
+    <Content Include="photo\agent_8.png" />
+    <Content Include="photo\agent_80.png" />
+    <Content Include="photo\agent_81.png" />
+    <Content Include="photo\agent_82.png" />
+    <Content Include="photo\agent_83.png" />
+    <Content Include="photo\agent_84.png" />
+    <Content Include="photo\agent_85.png" />
+    <Content Include="photo\agent_86.png" />
+    <Content Include="photo\agent_87.png" />
+    <Content Include="photo\agent_88.png" />
+    <Content Include="photo\agent_89.png" />
+    <Content Include="photo\agent_9.png" />
+    <Content Include="photo\agent_90.png" />
+    <Content Include="photo\agent_91.png" />
+    <Content Include="photo\agent_92.png" />
+    <Content Include="photo\agent_93.png" />
+    <Content Include="photo\agent_94.png" />
+    <Content Include="photo\agent_95.png" />
+    <Content Include="photo\agent_96.png" />
+    <Content Include="photo\agent_97.png" />
+    <Content Include="photo\agent_98.png" />
+    <Content Include="photo\agent_99.png" />
+    <Content Include="Resources\picture.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
